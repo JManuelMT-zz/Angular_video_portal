@@ -1,0 +1,23 @@
+<app-header></app-header><br>
+<div class="row">
+  <div  *ngFor="let video of videos" >
+    <div class="col s12 m6 l3">
+      <div class="card">
+        <div class="title-card">{{video.name.substr(3)}}</div>
+        <div class="card-image">
+          <video class="video-cont" controls>
+            <source src="http://localhost:3000/{{video.url}}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-content">
+          <p>{{video.description}}.</p>
+          <p>{{video.ratings}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

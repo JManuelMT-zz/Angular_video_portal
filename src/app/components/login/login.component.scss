@@ -1,0 +1,25 @@
+$primary-color: #26A69A;
+$secondary-color: #1E88E5;
+
+.login-title{
+    border-bottom: 2px solid $secondary-color;
+    color: #4C4343 !important;
+    margin: 20px !important;
+    padding: 20px;
+    
+}
+
+.card .card-content{
+    padding-top: 0px;
+}
+
+.top-login{
+    margin-top: 30px;
+}
+
+.container{
+    width: 35%;
+    min-width: 300px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}

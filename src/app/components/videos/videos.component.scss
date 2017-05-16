@@ -1,0 +1,27 @@
+$primary-color: #26A69A;
+$secondary-color: #1E88E5;
+
+.video-cont{
+    width: 100%;
+}
+
+.card-content{
+    vertical-align: middle;
+}
+
+.title-card{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white !important;
+    margin-bottom: 20px;
+    width: 100%;
+    background: $secondary-color;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 5.5%;
+}
+
+.card{
+   
+}
