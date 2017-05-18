@@ -15,21 +15,28 @@ export class HeaderComponent implements OnInit{
   public username: String;
   constructor(
     private _userService: UserService,
-    private _route: ActivatedRoute,
     private _router:Router) { 
-      
+    this.username="";
   
   }
 
   ngOnInit(){
-    this.token= JSON.parse(localStorage.getItem('currentUser'));
+    //user credentials
+    let user= JSON.parse(localStorage.getItem('currentUser'));
 
-    if(!this.token){
+    if(!user){
       alert(" You are not allowed to be here!");
+      
       this._router.navigate(['/']);
+    }
+    else{
+      this.token= user;
+      this.username= user.username;
     }
 
   }
+
+  //Log out function send request to api using userService
   onLogout(){
   
       
@@ -44,7 +51,7 @@ export class HeaderComponent implements OnInit{
            }
          },
          error =>{
-
+            console.log(error)
          }
        )
   }

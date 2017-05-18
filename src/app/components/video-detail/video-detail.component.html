@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div  class="row marg-left">
+  <div class="z-depth-3 col s12 m8 l9 container" >
+    <h4 class="detail-title" align="center">{{video.name}}</h4>
+    <div>
+            <video [attr.src]="'http://localhost:3000/'+video.url"  class="video-cont" controls  >
+              <source >
+              Your browser does not support the video tag.
+            </video>
+          <div class="row">
+            <p class="col s2" ><i class="material-icons stars">{{stars}}</i>
+              
+            </p>
+            <div  class="input-field select  col s4 offset-s6">
+                <select   [(ngModel)]="vote" (change)="postVote($event.target.value, video._id)" class="select" materialize="material_select">
+                  <option  disabled selected>Select</option>
+                  <option *ngFor="let mystar of ['One star', 'Two stars', 'Three stars', 'Four stars', 'Five stars']; let i=index;"  value="{{i+1}}">
+                    {{mystar}}
+                  </option>
+                </select>
+                <label>Vote here</label>
+              </div>
+            <p align="justify">{{video.description}}</p>
+          </div>
+        </div>
+
+  </div>
+
+  
+  <app-videos></app-videos>
+  
+</div>

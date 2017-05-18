@@ -4,12 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import{AppRoutingProviders, routing} from './app.routing';
 
+
+import 'materialize-css/js/toasts';
+
 import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TextLimitDirective } from './text-limit.directive';
+import { TextLimitPipe } from './pipes/text-limit.pipe';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
 
 @NgModule({
@@ -18,7 +23,8 @@ import { TextLimitDirective } from './text-limit.directive';
     LoginComponent,
     VideosComponent,
     HeaderComponent,
-    TextLimitDirective
+    TextLimitPipe,
+    VideoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +32,13 @@ import { TextLimitDirective } from './text-limit.directive';
     HttpModule,
     JsonpModule,
     routing,
-    MaterializeModule
+    MaterializeModule,
+    InfiniteScrollModule
   ],
   providers: [AppRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-color: #26A69A;
+$secondary-color: #1E88E5;
 body{
-    background: #26A69A !important;
+    background: $primary-color !important;
+}
+
+
+
+.proindex{
+    background-color: #A6C8E7 !important;
+    
+}
+.proindex .index {
+    background-color: $secondary-color !important;
 }

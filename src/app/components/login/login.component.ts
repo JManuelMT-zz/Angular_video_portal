@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _userService:UserService,
-    private _route: ActivatedRoute,
     private _router:Router
   ) { }
 
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-
+  //function of user authentification with api using userService
   onSubmit(){
     this.user.password= md5(this.pass);
     this._userService.authUser(this.user).subscribe(

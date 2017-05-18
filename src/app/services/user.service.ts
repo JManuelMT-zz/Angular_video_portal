@@ -16,7 +16,7 @@ export class UserService{
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser;
     }
-
+    //Authentification with api
     authUser(user:User){
         let json= JSON.stringify(user);
         let params= json;
@@ -33,7 +33,7 @@ export class UserService{
                             });
                 
     }
-
+    //Logout with api
     logOut(id:String){
         return this._http.get(this.url+'user/logout?sessionId='+id)
                             .map(res=>{
