@@ -26,7 +26,7 @@ export class VideosComponent implements OnInit {
   constructor(private _videoService: VideoService,
     private _router:Router){
       this.skip=0;
-      this.limit= 10;
+      this.limit= 8;
       this.video= new Video("","","","",[]);
   }
 
@@ -68,7 +68,7 @@ export class VideosComponent implements OnInit {
   onScrollDown () {
     this.loading= true;
 	    console.log('scrolled down!!')
-      this.limit+=10;
+      this.limit+=8;
       this.getVideos();
 	}
   //function to get videos from api using videoService

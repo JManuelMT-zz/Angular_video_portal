@@ -12,7 +12,7 @@ export class UserService{
     public url:string;
     public token: string;
     constructor(private _http:Http){
-        this.url = 'http://localhost:3000/';
+        environment.production==false? this.url = 'http://localhost:3000':this.url='https://api-node-videos.herokuapp.com/';
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser;
     }

@@ -17,7 +17,7 @@ declare var md5: any;
 export class LoginComponent implements OnInit {
 
   public user:User;
-  public pass:string;
+  public password:string;
   public errorMessage: any;
 
   constructor(
@@ -26,21 +26,22 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = new User("","","");
+    this.user = new User("tom","password","");
     
   }
 
   //function of user authentification with api using userService
   onSubmit(){
-    this.user.password= md5(this.pass);
+    this.user.password= md5(this.user.password);
     this._userService.authUser(this.user).subscribe(
       response=> {
-        if(!response){
+        if(response.status=="error"){
            alert("Username or password is incorrect");
            console.log(response)
            this._router.navigate(['/']);
         }
         else{
+   
           console.log("correct access")
           this._router.navigate(['/videos']);
         }

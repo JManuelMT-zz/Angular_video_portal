@@ -2,19 +2,19 @@
         <div class="card z-depth-3">
           <form #formLogin="ngForm" (ngSubmit)="onSubmit()">
             <div class="card-content">
-              <h1 align="center" class="card-title login-title">Crossover Video Portal Login</h1>
+              <h1 align="center" class="card-title login-title">VIDEO PORTAL LOGIN</h1>
                 <div class="row">
                   <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="user" type="text"  name="username" #username="ngModel" [(ngModel)]="user.username" required >
-                    <label for="user">Username</label>
+                    <label class="active" for="user">Username</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
-                    <input id="password" type="password"  name="password" #password="ngModel" [(ngModel)]="pass" required >
-                    <label for="password">Password</label>
+                    <input id="password"  type="password"  name="password" #password="ngModel" [(ngModel)]="user.password"  required >
+                    <label class="active" for="password">Password</label>
                   </div>
                 </div>
             </div>
